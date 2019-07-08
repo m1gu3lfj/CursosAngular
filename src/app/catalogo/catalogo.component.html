@@ -1,0 +1,25 @@
+<div style="width: 50%">
+    <h2>Catálogo de cursos</h2><br/>
+       
+    <table class="table table-bordered">
+        <thead class="thead-dark">
+        <tr>
+            <th align="left">Título</th>
+            <th align="left">Profesor</th>
+            <th align="left">Nivel</th>
+            <th align="left">Horas</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let curso of cursos | paginate: { itemsPerPage: 10, currentPage: p }">
+            <td *ngIf="curso.activo">{{ curso.titulo }}</td>
+            <td *ngIf="curso.activo">{{ curso.profesor }}</td>
+            <td *ngIf="curso.activo">{{ curso.nivel }}</td>
+            <td *ngIf="curso.activo">{{ curso.horas }}</td>
+        </tr>
+        </tbody>
+    </table>
+    <pagination-controls (pageChange)="p = $event"></pagination-controls><br/>
+
+    <button class="btn btn-primary" routerLink="/formulario">Nuevo Curso</button>
+</div>

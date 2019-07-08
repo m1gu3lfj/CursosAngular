@@ -1,0 +1,31 @@
+<div style="width: 25%">
+    <h2>Añadir cursos</h2><br/>  
+
+    <form (submit)="anadirCurso(activo, profesor, titulo, nivel, horac)">
+        <table class="table">
+            <tr>
+                <td><h5>Activo</h5></td>
+                <td><input class="form-check-input" type="checkbox" #activo></td>
+            </tr>
+            <tr>
+                <td><h5>Profesor</h5></td>
+                <td><select class="selectpicker" #profesor><option [value]="profesor" *ngFor="let profesor of profesores">{{profesor}}</option></select></td>
+            </tr>
+            <tr>
+                <td><h5>Título</h5></td>
+                <td><input class="form-control" type="text" size="30" #titulo></td>
+            </tr>
+            <tr>
+                <td><h5>Nivel</h5></td>
+                <td><select class="selectpicker" #nivel><option [value]="nivel" *ngFor="let nivel of niveles">{{nivel}}</option></select></td>
+            </tr>
+            <tr>
+                <td><h5>Horas</h5></td>
+                <td><select class="selectpicker" #horac><option [value]="horac" *ngFor="let horac of horas">{{horac}}</option></select></td>
+            </tr>
+        </table>
+        <button class="btn btn-primary">Añadir</button>
+    </form><br/>
+    
+    <a routerLink="/">Volver al catálogo de cursos</a>
+</div>
